@@ -55,7 +55,27 @@ public class LoopPractice {
 		
 	}
 	
-	
+	public void practice4() {
+		System.out.println("첫 번째 숫자 : ");
+		int input1 = sc.nextInt();
+		
+		System.out.println("두 번째 숫자 : ");
+		int input2 = sc.nextInt();
+		
+		if(input1 < 1 || input2 < 1) {
+			System.out.println("1 이상의 숫자를 입력해주세요");
+		} else {
+			for(int i = input1; i <= input2; i++) {
+				
+				
+				
+			}
+		}
+			
+		
+		
+		
+	}
 	
 	
 	
