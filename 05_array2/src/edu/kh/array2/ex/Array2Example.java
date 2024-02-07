@@ -150,10 +150,18 @@ public class Array2Example {
 		
 		System.out.println(Arrays.deepToString(arr));
 		
-		
-		
-		
+
 	}
+	
+	// getInfo() : 입력받은 이름 주개를 배열로 만들어 반환하는 메서드
+	//				콘솔 출력 시 ["김나나", "홍길동"]
+	// - getInfo() 정의와 호출을 해야함
+	// - 호출 시 입력받은 이름 두개를 전달인자로 전달할 것
+	// - getInfo() 메서드의 정의는 전달받은 매개변수 값을 이용할 것
+	
+	
+	
+	
 	
 	
 	
