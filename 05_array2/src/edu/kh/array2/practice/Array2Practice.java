@@ -1,5 +1,6 @@
 package edu.kh.array2.practice;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Array2Practice {
@@ -159,25 +160,31 @@ public class Array2Practice {
 		char[][] arr = new char[row][];
 		char eng = 'a';
 		int col = 0;;
+		String[] result = new String[row];
+		String sum = "";
 		
 		for(int i = 0; i < row; i++) {
 			System.out.print(i + "열의 크기 : ");
-			col = sc.nextInt();
+			col = sc.nextInt(); // 열 크기 입력
 			arr[i] = new char[col];
+			
+			
 			for(int x = 0; x < col; x++) {
 				
 				arr[i][x] = eng;
 				eng++;
-//				System.out.print(arr[i][x] + " ");
+				sum += arr[i][x] + " ";
 			}
+			result[i] = sum;
+			sum = "";
 		}
+		
+		
+		
+		
 		for(int y = 0; y < row; y++) {
-			
-			for(int x = 0; x < col; x++) {
-				System.out.print(arr[y][x] + " ");
-			}
-			System.out.println();
-			
+			System.out.println(result[y]);
+
 		}
 		
 		
