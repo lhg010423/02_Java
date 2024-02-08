@@ -157,17 +157,26 @@ public class Array2Practice {
 		System.out.print("행의 크기 : ");
 		int row = sc.nextInt();
 		char[][] arr = new char[row][];
+		char eng = 'a';
+		int col = 0;;
 		
 		for(int i = 0; i < row; i++) {
 			System.out.print(i + "열의 크기 : ");
-			int col = sc.nextInt();
+			col = sc.nextInt();
 			arr[i] = new char[col];
 			for(int x = 0; x < col; x++) {
-				int rd = (int)(Math.random() * 26 + 90);
-				arr[i][x] = (char)rd;
-				System.out.println("");
 				
+				arr[i][x] = eng;
+				eng++;
+//				System.out.print(arr[i][x] + " ");
 			}
+		}
+		for(int y = 0; y < row; y++) {
+			
+			for(int x = 0; x < col; x++) {
+				System.out.print(arr[y][x] + " ");
+			}
+			System.out.println();
 			
 		}
 		

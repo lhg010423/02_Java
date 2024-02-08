@@ -9,7 +9,8 @@ public class PracticeRun {
 //		ap.practice2();
 //		ap.practice3();
 //		ap.practice4();
-		ap.practice5();
+//		ap.practice5();
+		ap.practice6();
 		
 		
 		
