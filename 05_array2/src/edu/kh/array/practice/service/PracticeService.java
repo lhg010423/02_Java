@@ -287,6 +287,71 @@ public class PracticeService {
 	
 	public void practice14() {
 		
+		// 사용자가 입력한 배열의 길이만큼의 String 배열을 선언 및 할당하고
+		// 배열의 인덱스에 넣을 값 역시 가용자가 입력하여 초기화 하세요.
+		// 단, 사용자에게 값을 더 넣을지 물어보고 몇 개를 더 입력할 건지,
+		// 늘린 곳에 어떤 데이터를 넣을 것인지 받으세요.
+		// 사용자가 더 이상 입력하지 않겠다고 하면 배열 전체 값을 출력하세요
+
+		// 1. 첫 배열 크기 지정
+		System.out.print("배열의 크기를 입력하시오 : ");
+		int size = sc.nextInt();
+		sc.nextLine(); // 개행 넘기기
+		
+		String[] arr = new String[size]; // 입력한 수만한 배열 생성
+		
+		// 2. 첫 배열에 저장할 문자열 입력 받기
+		for(int i = 0; i < arr.length; i++) {
+			System.out.print((i+1) + "번째 문자열 : ");
+			arr[i] = sc.nextLine();
+		}
+		
+		// 3. 반복이 시작되는 구간부터 무한루프로 작성하여 내부에 종료 조건을 만들어 break
+		while(true) {
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			char ch = sc.nextLine().charAt(0); // 문자형 입력받기	
+			
+			//  4. 값을 더 입력한 경우
+			if(ch == 'y' || ch == 'Y') {
+				
+				// 5. 더 입력받을 개수 입력 받기
+				System.out.print("더 입력하고 싶은 개수 : ");
+				int addSize = sc.nextInt();
+				sc.nextLine(); // 개행 없애기
+				
+				// 6. 새로 값을 입력 받을 배열 생성 --> 기존 배열 크기 + 추가 입력 개수
+				String[] newArr = new String[arr.length + addSize];
+				
+				// 7. 배열 복사 + 새로운 문자열 입력 받기
+				for(int i = 0; i < newArr.length; i++) {
+					if(i < arr.length) { // 인덱스의 크기가 기존 배열보다 작을 경우 기존 배열값 복사
+						newArr[i] = arr[i];
+					} else { // 인데스의 크기가 기존 배열보가 클 경우 새로운 문자열 입력 받기
+						System.out.print((i+1) + "번째 문자열 : ");
+						newArr[i] = sc.nextLine();
+					}	
+				}
+				
+				// 8. 기존 배열공간을 참조하던 변수 arr에 새로운 배열 공간의 주소 newArr 대입
+				arr = newArr;
+				
+			} else if(ch == 'n' || ch == 'N') { // 9. 값을 더 입력하지 않은 경우
+				break; // 반복문 종료
+				
+			} else { // 잘못 입력한 경우
+				System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요.");
+			}	
+		}
+		
+		// 10. 배열값 모두 출력
+		System.out.println(Arrays.toString(arr));
+		
+		
+		
+		
+		
+		
+		/*
 		boolean flag = false;
 		for(int i = 0; i < 1; i++) {
 			
@@ -298,20 +363,16 @@ public class PracticeService {
 				
 			}
 			
-			
 			int size = sc.nextInt(); // 배열의 크기
 			String b = sc.nextLine();
 			
 			String[] arr = new String[size]; // 배열 생성
-			
 			
 			for(int a = 0; a < size; a++) {
 				System.out.print(a+1 + "번째 문자열 : ");
 				String input = sc.nextLine();
 				arr[a] = input;
 			}
-			
-			
 			
 			System.out.print("더 값을 입력하시겠습니까? (Y/N) : ");
 			char result = sc.next().charAt(0);
@@ -321,7 +382,9 @@ public class PracticeService {
 				System.out.println(Arrays.toString(arr));
 			}
 		
-		}
+		*/
+		
+		
 		
 		
 		
