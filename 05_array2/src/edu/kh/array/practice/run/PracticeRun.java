@@ -12,7 +12,7 @@ public class PracticeRun {
 //		ps.practice3();
 //		ps.practice4();
 //		ps.practice5();
-//		ps.practice6();
+		ps.practice6();
 //		ps.practice7();
 //		ps.practice8();
 //		ps.practice9();
@@ -20,7 +20,7 @@ public class PracticeRun {
 //		ps.practice11();
 //		ps.practice12();
 //		ps.practice13();
-		ps.practice14();
+//		ps.practice14();
 		
 		
 		
