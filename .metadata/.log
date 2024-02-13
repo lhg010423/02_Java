@@ -447,7 +447,11 @@ not correct please set the HOME environment variable and restart Eclipse. Otherw
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 <<<<<<< HEAD
+<<<<<<< HEAD
 !SESSION 2024-02-13 08:50:50.034 -----------------------------------------------
+=======
+!SESSION 2024-02-11 20:27:12.132 -----------------------------------------------
+>>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
 =======
 !SESSION 2024-02-11 20:27:12.132 -----------------------------------------------
 >>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
@@ -458,6 +462,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 !ENTRY org.eclipse.emf.ecore 2 0 2024-02-13 08:51:17.941
 !MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
@@ -472,6 +477,8 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2024-02-13 08:51:43.137
 =======
+=======
+>>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
 !ENTRY org.eclipse.emf.ecore 2 0 2024-02-11 20:27:15.750
 !MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
 
@@ -484,6 +491,9 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 !ENTRY org.eclipse.jface 2 0 2024-02-11 20:27:21.570
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2024-02-11 20:27:21.570
+<<<<<<< HEAD
+>>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
+=======
 >>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
@@ -504,6 +514,7 @@ Binding(CTRL+SHIFT+T,
 	org.eclipse.ui.contexts.window,,,system)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 !ENTRY org.eclipse.egit.ui 2 0 2024-02-13 08:51:46.431
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\user1'. If this is
@@ -512,6 +523,8 @@ EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 !SESSION 2024-02-13 11:01:59.905 -----------------------------------------------
 =======
+=======
+>>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
 !ENTRY org.eclipse.ui 4 4 2024-02-11 20:27:24.242
 !MESSAGE Unable to create part
 !STACK 1
@@ -1091,6 +1104,9 @@ not correct please set the HOME environment variable and restart Eclipse. Otherw
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 !SESSION 2024-02-12 14:31:25.344 -----------------------------------------------
+<<<<<<< HEAD
+>>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
+=======
 >>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
 eclipse.buildId=4.30.0.20231201-1200
 java.version=17.0.9
@@ -1099,6 +1115,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 !ENTRY org.eclipse.emf.ecore 2 0 2024-02-13 11:02:25.839
 !MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
@@ -1113,6 +1130,8 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2024-02-13 11:02:31.874
 =======
+=======
+>>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
 !ENTRY org.eclipse.emf.ecore 2 0 2024-02-12 14:31:29.578
 !MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
 
@@ -1125,6 +1144,9 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 !ENTRY org.eclipse.jface 2 0 2024-02-12 14:31:50.522
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2024-02-12 14:31:50.522
+<<<<<<< HEAD
+>>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
+=======
 >>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
@@ -1145,6 +1167,7 @@ Binding(CTRL+SHIFT+T,
 	org.eclipse.ui.contexts.window,,,system)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 !ENTRY org.eclipse.egit.ui 2 0 2024-02-13 11:02:34.385
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\user1'. If this is
@@ -1152,6 +1175,8 @@ not correct please set the HOME environment variable and restart Eclipse. Otherw
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 =======
+=======
+>>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
 !ENTRY org.eclipse.egit.ui 2 0 2024-02-12 14:31:56.771
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\snp42'. If this is
@@ -2764,4 +2789,7 @@ org.eclipse.core.runtime.CoreException:
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
 !SUBENTRY 2 org.sf.feeling.decompiler 8 1 2024-02-12 20:45:08.247
 !MESSAGE 
+<<<<<<< HEAD
+>>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
+=======
 >>>>>>> f1b8b11f4e59cff494f532d7469abe7548d4a595
