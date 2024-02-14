@@ -9,27 +9,26 @@ public class Snack {
 	private int price;
 	
 	
-	public Snack() {
-		
-	}
+	public Snack() {} // 기본생성자
 	
+	// 매개변수 생성자
 	public Snack(String kind, String name, String flavor, int numOf, int price) {
-//		this.kind = kind;
-//		this.name = name;
-//		this.flavor = flavor;
-//		this.numOf = numOf;
-//		this.price = price;
+		this.kind = kind;
+		this.name = name;
+		this.flavor = flavor;
+		this.numOf = numOf;
+		this.price = price;
 	}
 	
 	public String information() {
-		return ;
-		
+		return kind + "(" + name + " - " + flavor + ") " + numOf + "개" + price + "원";
 	}
 	
 	
 	
 	
 	
+	// getter/setter
 	public String getKind() {
 		return kind;
 	}
