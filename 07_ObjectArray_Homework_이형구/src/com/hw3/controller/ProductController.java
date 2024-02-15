@@ -134,7 +134,7 @@ public class ProductController {
 	
 	// 5. 제품 정보 검색
 	public void productSearch() {
-		System.out.println("검색할 제품 번호를 입력하시오");
+		System.out.println("\n검색할 제품 번호를 입력하시오");
 		for(int i = 0; i < count; i++) {
 			System.out.println(i + "번 : " + pro[i].getpName());
 		}

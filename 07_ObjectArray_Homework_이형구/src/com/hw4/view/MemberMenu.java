@@ -8,7 +8,7 @@ public class MemberMenu {
 
 	// MemberController 클래스 접근을 위해 필드로 선언
 	private MemberController mc = new MemberController();
-	Scanner sc = new Scanner(System.in);
+	static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		// 메뉴 출력 -> 반복 실행 처리
@@ -50,6 +50,9 @@ public class MemberMenu {
 	// 회원에 대한 정보를 입력 받고 동일한 아이디가 없는 경우 실행
 	public void insertMember() {
 		// 아이디, 비번, 이름,  나이 성별, 이메일 필요함
+		
+		if(mc.MemberCount >= mc.SIZE)
+		
 		int menu = 0;
 		
 		do {

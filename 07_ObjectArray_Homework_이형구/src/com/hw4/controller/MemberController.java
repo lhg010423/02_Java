@@ -10,11 +10,17 @@ public class MemberController {
 	private Member[] mem = new Member[SIZE]; // 회원 객체 배열
 	
 	
+	// 현재 회원 수 값을 반환
+	public int getMemberCount() {
+		return this.memberCount;
+	}
+
+	// 현재 회원 객체 배열의 주소 값을 반환
+	public Member[] getMem() {
+		return SIZE;
+	}
 	
-	public int getMemberCount() {}
-	
-	public Member[] getMem() {}
-	
+	//
 	public Member checkId(String userId) {}
 	
 	public void insertMember(Member m) {}
