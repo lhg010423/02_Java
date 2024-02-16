@@ -1,0 +1,31 @@
+package edu.kh.poly.ex1.model.vo;
+
+public class Spark extends Car{ // 경차
+	
+	private double discountOffer; // 할인혜택
+	
+	public Spark() {} // 기본생성자
+
+	public Spark(String engin, String fuel, int wheel, double discountOffer) {
+		super(engin, fuel, wheel);
+		this.discountOffer = discountOffer;
+	}
+
+	public double getDiscountOffer() {
+		return discountOffer;
+	}
+
+	public void setDiscountOffer(double discountOffer) {
+		this.discountOffer = discountOffer;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " / " + discountOffer;
+	}
+	
+	
+	
+	
+
+}
