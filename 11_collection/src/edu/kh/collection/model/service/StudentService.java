@@ -66,7 +66,7 @@ public class StudentService {
 		
 		
 		if( studentList.get(0) instanceof Student ) {
-			System.out.println( (Student)(studentList.get(0)).getName() );
+			System.out.println( ((Student)studentList.get(0)).getName() );
 		}
 			
 		//System.out.println( studentList.get(1) );

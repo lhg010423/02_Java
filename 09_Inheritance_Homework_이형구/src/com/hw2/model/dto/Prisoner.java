@@ -1,14 +1,13 @@
 package com.hw2.model.dto;
 
-public class Prisoner extends Person{
+public class Prisoner extends Person{ // 수감자
 
 	private String crime; // 죄목
 	
 	public Prisoner() {}
 	
 	public Prisoner(String id, String name, String crime) {
-		this.id = id;
-		this.name = name;
+		super(id, name);
 		this.crime = crime;
 		
 	}
@@ -28,8 +27,8 @@ public class Prisoner extends Person{
 	
 	@Override
 	public String getInfo() {
-		
-		return null;
+		return String.format("ID : %s , 이름 : %s , 죄목 : %s", id, name, crime);
+		// id와 name을 Person에서 protected로 만들어놨기 때문에 후손클래스에서 직접접근 가능
 	}
 	
 	

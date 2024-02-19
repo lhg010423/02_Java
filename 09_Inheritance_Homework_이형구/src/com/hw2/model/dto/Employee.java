@@ -1,6 +1,6 @@
 package com.hw2.model.dto;
 
-public class Employee extends Person{
+public class Employee extends Person{ // 직원
 
 	private String position; // 직책
 	
@@ -36,10 +36,8 @@ public class Employee extends Person{
 
 	@Override
 	public String getInfo() {
-		String str = "ID : " + id +
-				" , 이름 : " + name + " , 직책 : " + position;
-		
-		return str;
+		return String.format("ID : %s , 이름 : %s , 직책 : %s", id, name, position);
+		// id와 name을 Person에서 protected로 만들어놨기 때문에 후손클래스에서 직접접근 가능
 	}
 	
 
