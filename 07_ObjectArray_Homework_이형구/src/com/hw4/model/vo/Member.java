@@ -24,8 +24,8 @@ public class Member {
 	}
 	
 	public String information() {
-		
-		return "";
+		return "userId=" + userId + ", userPwd=" + userPwd + ", name=" + name + ", age=" + age + ", gender="
+				+ gender + ", email=" + email;
 	}
 	
 	

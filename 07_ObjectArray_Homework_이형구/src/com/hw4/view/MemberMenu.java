@@ -3,14 +3,15 @@ package com.hw4.view;
 import java.util.Scanner;
 
 import com.hw4.controller.MemberController;
+import com.hw4.model.vo.Member;
 
 public class MemberMenu {
 
 	// MemberController 클래스 접근을 위해 필드로 선언
 	private MemberController mc = new MemberController();
-	static Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
 	
-	public static void main(String[] args) {
+	public void mainMenu() {
 		// 메뉴 출력 -> 반복 실행 처리
 		int menu = 0;
 				
@@ -51,31 +52,173 @@ public class MemberMenu {
 	public void insertMember() {
 		// 아이디, 비번, 이름,  나이 성별, 이메일 필요함
 		
-		if(mc.MemberCount >= mc.SIZE)
+		if(mc.getMemberCount() >= MemberController.SIZE) {
+			System.out.println("회원 수를 초과했습니다.");
+			return;
+		}
 		
-		int menu = 0;
+		System.out.print("아이디 : ");
+		String userId = sc.nextLine();
 		
-		do {
-			System.out.println("===== 회원 정보 검색 =====");
-			System.out.println();
+		Member m = mc.checkId(userId);
+		
+		if(m != null) {
+			System.out.println("동일한 아이디가 존재합니다. 회원등록 실패");
+		
+		}else {
 			
-		} while(menu != 0);
+			System.out.print("비밀번호 : ");
+			String userPwd = sc.nextLine();
+			System.out.print("이름 : ");
+			String name = sc.nextLine();
+			System.out.print("나이 : ");
+			int age = sc.nextInt();
+			sc.nextLine();
+			System.out.print("성별 : ");
+			char gender = sc.nextLine().charAt(0);
+			System.out.print("이메일 : ");
+			String email = sc.nextLine();
+			
+			mc.insertMember(new Member(userId, userPwd, name, age, gender, email));
 		
+			System.out.println("성공적으로 회원등록이 되었습니다.");
 		
-		
+		}
 	}
 	
-	public void searchMember() {}
+	public void searchMember() {
+		while(true) {
+			System.out.println("====== 회원 정보 검색 ======");
+			System.out.println("1. 아이디로 검색하기");
+			System.out.println("2. 이름으로 검색하기");
+			System.out.println("3. 이메일로 검색하기");
+			System.out.println("9. 이전 메뉴로");
+			
+			System.out.print("메뉴 선택 : ");
+			int menu = sc.nextInt();
+			sc.nextLine();
+			
+			if(menu == 9) {
+				System.out.println("이전메뉴로 돌아갑니다.");
+				return;
+			}
+			
+			System.out.print("검색 내용 : ");
+			String search = sc.nextLine();
+			
+			Member searchMember = mc.searchMember(menu, search);
+			
+			if(searchMember != null) {
+				System.out.println("====== 검색결과 ======");
+				System.out.println(searchMember.information());
+			}else {
+				System.out.println("검색된 결과가 없습니다.");
+			}
+		}
+	}
 	
-	public void updateMember() {}
+	public void updateMember() {
+		while(true) {
+			System.out.println("====== 회원 정보 수정 ===== ");
+			System.out.println("1. 비밀번호 수정");
+			System.out.println("2. 이름 수정");
+			System.out.println("3. 이메일 수정");
+			System.out.println("9. 이전 메뉴로");
+			
+			System.out.print("메뉴 선택 : ");
+			int menu = sc.nextInt();
+			sc.nextLine();
+			
+			if(menu == 9) {
+				System.out.println("이전메뉴로 돌아갑니다.");
+				return;
+			}
+			
+			System.out.print("변경할 회원 아이디 : ");
+			String userId = sc.nextLine();
+			
+			Member m = mc.checkId(userId);
+			
+			if(m != null) {
+				System.out.println("기존 정보 : " + m.information());
+				System.out.print("변경 내용 : ");
+				String update = sc.nextLine();
+				mc.updateMember(m, menu, update);
+				
+				System.out.println("회원의 정보가 변경되었습니다.");
+			}else {
+				System.out.println("변경할 회원에 대한 정보가 존재하지 않습니다.");
+			}
+		}
+	}
 	
-	public void deleteMember() {}
+	public void deleteMember() {
+		
+		System.out.print("삭제할 회원 아이디 : ");
+		String userId = sc.nextLine();
+		
+		Member m = mc.checkId(userId);
+		
+		if(m != null) {
+			System.out.println("기존 정보 : " + m.information());
+			
+			System.out.print("정말 삭제하겠습니까? (y/n) : ");
+			char ch = sc.nextLine().toUpperCase().charAt(0);
+			
+			if(ch == 'Y') {
+				mc.deleteMember(userId);
+				
+				System.out.println("회원의 정보가 삭제되었습니다.");
+			}
+		}else {
+			System.out.println("삭제할 회원에 대한 정보가 존재하지 않습니다.");
+		}
+	}
 	
-	public void printAllMember() {}
+	public void printAllMember() {
+		Member[] mem = mc.getMem();
+		
+		for(int i=0; i<mc.getMemberCount(); i++) {
+			System.out.println(mem[i].information());
+		}
+	}
 	
-	public void sortMember() {}
-	
-	
+	public void sortMember() {
+		while(true) {
+			System.out.println("====== 회원 정보 정렬 ===== ");
+			System.out.println("1. 아이디 오름차순 정렬");
+			System.out.println("2. 아이디 내림차순 정렬");
+			System.out.println("3. 나이 오름차순 정렬");
+			System.out.println("4. 나이 내림차순 정렬");
+			System.out.println("5. 성별 내림차순 정렬 (남여 순)");
+			System.out.println("9. 이전 메뉴로");
+			
+			System.out.print("메뉴 선택 : ");
+			int menu = sc.nextInt();
+			sc.nextLine();
+			
+			if(menu == 9) {
+				System.out.println("이전메뉴로 돌아갑니다.");
+				return;
+			}
+			
+			Member[] sortMem = null;
+			
+			switch(menu) {
+			case 1: sortMem = mc.sortIdAsc(); break;
+			case 2: sortMem = mc.sortIdDesc(); break;
+			case 3: sortMem = mc.sortAgeAsc(); break;
+			case 4: sortMem = mc.sortAgeDesc(); break;
+			case 5: sortMem = mc.sortGenderDesc(); break;
+			default: System.out.println("잘못입력하셨습니다. 다시입력해주세요.");
+			}
+			
+			System.out.println("====== 정렬결과 ======");
+			for(int i=0; i<sortMem.length; i++) {
+				System.out.println(sortMem[i].information());
+			}
+		}
+	}
 	
 	
 	
