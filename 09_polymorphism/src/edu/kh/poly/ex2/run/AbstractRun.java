@@ -10,7 +10,7 @@ public class AbstractRun {
 		AbstractService as = new AbstractService();
 		
 //		as.ex1();
-//		as.ex2();
+		as.ex2();
 		
 		// -----------------------------------------------
 		
