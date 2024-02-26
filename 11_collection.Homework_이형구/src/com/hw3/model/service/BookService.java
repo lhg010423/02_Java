@@ -46,16 +46,15 @@ public class BookService {
 				
 				switch(menuNum) {
 				case 1 : System.out.println(addBook()); break;
-				case 2 : System.out.println(selectBook()); break;
+				case 2 : showBookList(library); break;
 				case 3 : System.out.println(editBook()); break;
 				case 4 : System.out.println(deleteBook()); break;
-				case 5 : System.out.println(addFavorite); break;
+				case 5 : System.out.println(addFavorite()); break;
 				case 6 : System.out.println(deleteFavorite()); break;
 				case 7 : showBookList(favList); break;
 				case 8 : randomBook(); break;
 				case 0 : System.out.println("종료되었습니다."); break;
 				default : System.out.println("잘못 입력하셨습니다.메뉴에 있는 번호를 입력해주세요"); break;
-				
 				}
 				
 			} while(menuNum != 0);
@@ -112,48 +111,178 @@ public class BookService {
 	
 	
 	
-	
-	
-	
+
 	/** 도서 수정용 메서드
 	 * @return
 	 */
-	public void selectBook() {
-		
+	public String editBook() {
 		showBookList(library);
 		
-		System.out.println("\n====== 도서 조회 ======");
-	
-		for(Book b : book) {
-			System.out.println(b.toString());	
+		int editMenu = 0;
+		
+		System.out.println("========도서 수정========");
+		
+		System.out.print("수정할 도서 번호를 입력하세요 : ");
+		int bookNum = sc.nextInt();
+		
+		boolean flag = true;
+		
+		for( Book temp : library ) {
+			
+			if( temp.getBookNum() == bookNum ) {
+				flag = false; 
+				
+				System.out.println("1. 도서명");
+				System.out.println("2. 도서 저자");
+				System.out.println("3. 도서 가격");
+				System.out.println("4. 도서 출판사");
+				System.out.println("0. 수정 종료");
+				System.out.print("어떤 정보를 수정하시겠습니까? ");
+				
+				// 번호를 받고 번호에 맞는 값 수정
+				editMenu = sc.nextInt();
+				sc.nextLine();
+				
+				switch(editMenu) {
+				case 1 : System.out.println("==도서명 수정==");
+				System.out.print("수정할 도서명을 입력하세요 : ");
+				String title = sc.nextLine();
+				temp.setTitle(title);
+				break;
+				
+				case 2 : System.out.println("==도서 저자 수정==");
+				System.out.print("수정할 저자명을 입력하세요 : ");
+				String writer = sc.nextLine();
+				temp.setWriter(writer);
+				
+				
+				case 3: System.out.println("=====도서 가격 수정====="); 
+				System.out.print("수정할 가격을 입력하세요 : ");
+				int price = sc.nextInt();
+				temp.setPrice(price);
+				editMenu = 0;
+				break;
+				
+				case 4: System.out.println("=====도서 출판사 수정====="); 
+				System.out.print("수정할 출판사를 입력하세요 : ");
+				String publisher = sc.nextLine();
+				temp.setPublisher(publisher);
+				editMenu = 0;
+				break;
+				
+				case 0: System.out.println("종료합니다"); break;
+				
+				default: System.out.println("잘못 입력하셨습니다.");  break;
+				}
+			}
+			
 		}
+		
+		if(flag) {
+			return "일치하는 도서번호가 없습니다";
+		}
+		
+		return "수정 완료";
 		
 	}
 	
-	public void updateBook() {
+	/** 도서 삭제용 메서드
+	 * @return
+	 */
+	public String deleteBook() {
 		
-		System.out.println("\n====== 도서 수정 ======");
-		System.out.print("수정할 도서 번호를 입력하세요 : ");
-		int num = sc.nextInt();
+		System.out.println("=====도서 삭제======");
 		
-		System.out.println("1. 도서명");
-		System.out.println("2. 도서 저자");
-		System.out.println("3. 도서 가격");
-		System.out.println("4. 도서 출판사");
-		System.out.println("0. 수정 종료");
-		System.out.println("어떤 정보를 수정하시겠습니까? : ");
-		num = sc.nextInt();
+		showBookList(library);
 		
+		System.out.print("삭제할 도서의 번호를 입력하세요 : ");
+		int deleteNum = sc.nextInt();
 		
-		switch(num) {
-		case 1 : System.out.print("수정할 도서명을 입력하세요 : ");
-		sc.nextLine();
-		String name = sc.nextLine();
-		book.set(num, null)
-		
-		
+		for( Book temp : library ) {
+			
+			if(temp.getBookNum() == deleteNum) {
+				int index = library.indexOf(temp);
+				
+				System.out.print("정말 삭제하시겠습니까? (Y/N) : ");
+				
+				char answer = sc.next().toUpperCase().charAt(0);
+				
+				if(answer == 'Y') {
+					library.remove(index);
+					break;
+				} else {
+					return "삭제를 진행하지 않습니다";
+				}
+			}
+			
 		}
 		
+		return "삭제 끝";
+		
+	}
+	
+
+	public String addFavorite() {
+		
+		System.out.println("==== 즐겨 찾기 등록 ====");
+		System.out.print("등록할 도서 번호 입력 : ");
+		int input = sc.nextInt();
+		
+		boolean flag = true;
+		
+		for(Book temp : library) {
+			if(temp.getBookNum() == input) {
+				favList.add(temp);
+				flag = false;
+			}
+		}
+		
+		if(flag) {
+			return "찾는 번호 없다";
+		} else {
+			return "등록 성공";
+		}
+		
+		
+	}
+	
+
+	public String deleteFavorite() {
+		
+		System.out.println("=====즐겨 찾기 삭제=====");
+		
+		System.out.print("즐겨찾기 삭제할 도서 번호를 입력하세요 : ");
+		int input = sc.nextInt();
+		
+		boolean flag = true;
+		
+		for(Book temp : favList) {
+			if(temp.getBookNum() == input) {
+				
+				int index = favList.indexOf(temp);
+				
+				favList.remove(index);
+				
+				flag = false;
+				
+				break;
+			}
+		}
+		
+		if (flag) {
+			return "찾는 번호가 없습니다.";
+		}else {
+			return "삭제 성공";
+		}
+	}
+
+
+	public void randomBook() {
+		
+		int max = library.size(); 
+		int random = (int)(Math.random() * max);
+		
+		System.out.println(library.get(random).getTitle());
 	}
 	
 	
