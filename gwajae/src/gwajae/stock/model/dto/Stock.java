@@ -6,7 +6,7 @@ public class Stock implements Serializable{
 	
 	private String company; // 회사 이름
 	private String sector; // 섹터
-	private double stockPrice; // 주가
+	private double stockPrice; // 주가, 달러 기준
 	private double dividendRate; // 배당률
 	private double dividendYield; // 배당 수익률
 	// 배당 수익률 = (주당 배당금 / 현재 주가) * 100
@@ -14,13 +14,13 @@ public class Stock implements Serializable{
 	
 	public Stock() {}
 	
-	public Stock(String company, String sector, double stockPrice, double dividendRate, double dividendYield) {
+	public Stock(String company, String sector, double stockPrice, double dividendRate) {
 		super();
 		this.company = company;
 		this.sector = sector;
 		this.stockPrice = stockPrice;
 		this.dividendRate = dividendRate;
-		this.dividendYield = dividendYield;
+		this.dividendYield = (dividendRate / stockPrice) * 100;
 	}
 
 

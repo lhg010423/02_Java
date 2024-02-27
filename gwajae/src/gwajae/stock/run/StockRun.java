@@ -9,6 +9,7 @@ public class StockRun {
 		
 		StockView view = new StockView();
 		
+		view.startView();
 		
 		
 	}
