@@ -12,4 +12,10 @@ public interface StockDAO {
 
 	Stock stockInfo(String searchStock);
 
+	int stockCreate(Stock stock) throws Exception;
+
+	boolean stockUpdate(int num, String company, String sector, double stockPrice, double dividendRate) throws Exception;
+
+	Stock stockDelete(String searchStock) throws Exception;
+
 }

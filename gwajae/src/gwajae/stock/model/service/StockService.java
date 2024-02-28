@@ -10,6 +10,11 @@ public interface StockService {
 
 	public abstract String stockInfo(String searchStock);
 
-	public abstract int stockCreate(String company, String sector, double stockPrice, double dividendRate);
+	public abstract int stockCreate(String company, String sector, double stockPrice, double dividendRate) throws Exception;
+
+	public abstract boolean stockUpdate(int num, String company, String sector, double stockPrice,
+			double dividendRate) throws Exception;
+
+	public abstract String stockDelete(String searchStock) throws Exception;
 
 }

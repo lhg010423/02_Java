@@ -112,6 +112,59 @@ public class StockDAOImpl implements StockDAO {
 
 
 
+
+
+	@Override
+	public int stockCreate(Stock stock) throws Exception{
+		
+		if(stockList.add(stock)) {
+			saveFile();
+			return stockList.size() -1;
+		}
+		
+		return -1;
+	}
+
+
+
+
+
+	@Override
+	public boolean stockUpdate(int num, String company, String sector, double stockPrice, double dividendRate) throws Exception {
+		
+		Stock stock = new Stock(company, sector, stockPrice, dividendRate);
+		
+		if(stockList.set(num, stock) != null) {
+			saveFile();
+			return true;
+			
+		}
+		
+		return false;
+	}
+
+
+
+
+
+	@Override
+	public Stock stockDelete(String searchStock) throws Exception{
+		int num = 0;
+		
+		for(int i = 0; i < stockList.size(); i++) {
+			if(stockList.get(i).getCompany().equals(searchStock)) {
+				Stock stock = stockList.remove(i);
+				saveFile();
+				return stock;
+			}
+		}
+		
+		
+		return null;
+	}
+
+
+
 	
 	
 	

@@ -44,7 +44,8 @@ public class StockServiceImpl implements StockService {
 	
 	
 	@Override
-	public int stockCreate(String company, String sector, double stockPrice, double dividendRate) {
+	public int stockCreate(String company, String sector, double stockPrice, double dividendRate) throws Exception{
+		
 		
 		Stock stock = new Stock(company, sector, stockPrice, dividendRate);
 		
@@ -52,6 +53,28 @@ public class StockServiceImpl implements StockService {
 		
 		
 		return result;
+	}
+
+	
+	
+	
+
+	@Override
+	public boolean stockUpdate(int num, String company, String sector, double stockPrice, double dividendRate) throws Exception{
+		
+		return dao.stockUpdate(num, company, sector, stockPrice, dividendRate);
+	}
+
+	@Override
+	public String stockDelete(String searchStock) throws Exception{
+		
+		Stock stock = dao.stockDelete(searchStock);
+		
+		if(stock == null) return null;
+			
+		
+		
+		return stock.getCompany();
 	}
 	
 	
