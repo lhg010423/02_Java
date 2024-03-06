@@ -367,7 +367,6 @@ public class ByteService {
 		BufferedInputStream bis = null;
 		
 		
-		
 
 		try {
 			// 기반 스트림 새엇ㅇ
@@ -510,7 +509,7 @@ public class ByteService {
 				// 사용한 스트림 메모리 모두 반환
 				if(br !=  null) br.close();
 				if(bis != null) bis.close(); // fis 도 같이닫힘
-				if(bos != null) bos.close(); // fis 도 같이닫힘
+				if(bos != null) bos.close(); // fos 도 같이닫힘
 				
 				
 				

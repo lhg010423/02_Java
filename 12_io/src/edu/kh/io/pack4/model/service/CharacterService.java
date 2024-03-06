@@ -121,38 +121,9 @@ public class CharacterService {
 				e.printStackTrace();
 			}
 			
-			
 		}
 		
-		
-		
-		
-		
-		
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }
