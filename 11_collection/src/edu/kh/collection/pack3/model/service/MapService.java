@@ -79,7 +79,7 @@ public class MapService {
 		
 		System.out.println("clear() 전 isEmpty() : " + map.isEmpty()); // false
 		
-		map.clear(); // 모든 Entry 사가제함
+		map.clear(); // 모든 Entry 삭제함
 		
 		System.out.println("clear() 후 isEmpty() : " + map.isEmpty()); // true
 		
