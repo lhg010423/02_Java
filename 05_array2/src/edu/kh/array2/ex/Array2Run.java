@@ -6,9 +6,9 @@ public class Array2Run {
 		
 		Array2Example a2e = new Array2Example();
 		
-//		a2e.ex1();
+		a2e.ex1();
 //		a2e.ex2();
-		a2e.ex3();
+//		a2e.ex3();
 		
 		
 		
